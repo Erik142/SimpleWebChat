@@ -10,7 +10,7 @@ namespace SimpleWebChat.Chat
     {
         public async Task SendMessage(string username, string message)
         {
-            await Clients.All.SendAsync("Receive", username, message);
+            await Clients.All.SendAsync("ReceiveMessage", username, message);
         }
     }
 }

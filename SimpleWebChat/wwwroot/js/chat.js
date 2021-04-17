@@ -3,7 +3,7 @@
 var isUsernameEmpty = true;
 var isMessageEmpty = true;
 
-connection.on("Receive", (username, message) => {
+connection.on("ReceiveMessage", (username, message) => {
     var descriptionTerm = document.createElement("dt");
     var description = document.createElement("dd");
 
