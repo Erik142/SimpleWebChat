@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SimpleWebChat.Chat;
 
 namespace SimpleWebChat
 {
@@ -23,6 +24,7 @@ namespace SimpleWebChat
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
             services.AddRazorPages();
         }
 
@@ -50,6 +52,7 @@ namespace SimpleWebChat
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }
