@@ -5,6 +5,33 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 mt-2">
+                <p>Username</p>
+            </div>
+            <div class="col-3 mt-2">
+                <p>Message</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 mt-2">
+                <input type="text" id="username" />
+            </div>
+            <div class="col-3 mt-2">
+                <input type="text" id="message" />
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3 mt-2"></div>
+            <div class="col-3 mt-2">
+                <input type="button" id="sendButton" value="Send message" disabled="disabled" />
+            </div>
+        </div>
+        <dl class="row mt-2" id="messages">
+        </dl>
+    </div>
 </div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
